@@ -18,6 +18,9 @@ public class EmpWage {
 			
 			// Use Case - 2
 			System.out.println("Daily Wage of Employee is " + Integer.toString(WagePerHour*FullDay));
+			
+			// Use Case - 3
+			System.out.println("Part Time Wage of Employee is " + Integer.toString(WagePerHour*PartTime));
 		}
 	}
 }
