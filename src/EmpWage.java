@@ -13,5 +13,11 @@ public class EmpWage {
 			System.out.println("Employee is Present");
 		else
 			System.out.println("Employee is not Present");
+		
+		if(empCheck == 1) {
+			
+			// Use Case - 2
+			System.out.println("Daily Wage of Employee is " + Integer.toString(WagePerHour*FullDay));
+		}
 	}
 }
