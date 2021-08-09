@@ -4,16 +4,13 @@ public class EmpWage {
 		int FullDay = 8;
 		int WagePerHour= 20;
 		int PartTime = 8;
-		int totalDays = 20;
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			System.out.println("1. To check Employee is Present or Not \n"
 					+ "2. To Calculate Daily Wage of Employee\n"
-					+ "3. To Calculate Part Time Wage of Employee\n"
-					+ "4. To Calculate Wages for a Month\n");
+					+ "3. To Calculate Part Time Wage of Employee\n");
 			// Use Case - 1
 			int a = sc.nextInt();
-			// Use Case - 4
 			switch(a) {
 			case 1:
 				double random = Math.random();
@@ -33,10 +30,6 @@ public class EmpWage {
 			case 3:
 					// Use Case - 3
 					System.out.println("Part Time Wage of Employee is " + Integer.toString(WagePerHour * PartTime)+ "\n");
-					break;
-			case 4:
-					// Use Case - 5
-					System.out.println("Part Time Wage of Employee is " + (WagePerHour * FullDay) * totalDays + "\n");
 					break;
 			}
 		
