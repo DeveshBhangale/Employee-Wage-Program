@@ -1,4 +1,13 @@
 import java.util.*;
+
+//Use Case - 7 
+class calculateWage{
+	public int monthlyWage(int WagePerHour,int FullDay,int totalDays){
+		return	((WagePerHour * FullDay) * totalDays);
+	}
+}
+
+
 public class EmpWage {
 	public static void main(String[] args) {
 		int FullDay = 8;
@@ -36,12 +45,14 @@ public class EmpWage {
 					System.out.println("Part Time Wage of Employee is " + Integer.toString(WagePerHour * PartTime)+ "\n");
 					break;
 			case 4:
-					// Use Case - 5
-					System.out.println("Part Time Wage of Employee is " + (WagePerHour * FullDay) * totalDays + "\n");
+					// Use Case - 5 & 7
+					calculateWage obj1 = new calculateWage();
+					int ans = obj1.monthlyWage(WagePerHour, FullDay, totalDays);
+					System.out.println("Wages for a month of Employee is " + ans + "\n");
 					break;
 			case 5:
 					// Use Case - 6
-					System.out.println("Part Time Wage of Employee is " + (WagePerHour * (FullDay-3)) * totalDays + "\n");
+					System.out.println("Wages for 100 hours or 20 Days of Employee is " + (WagePerHour * (FullDay-3)) * totalDays + "\n");
 					break;
 			}
 		
