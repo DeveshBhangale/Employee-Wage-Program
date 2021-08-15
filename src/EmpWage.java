@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 //Use Case - 7 
@@ -27,9 +28,7 @@ public class EmpWage {
 			switch(a) {
 			case 1:
 				double random = Math.random();
-				System.out.println(random);
-				double empCheck = Math.floor(random* 10) % 2;
-			
+				double empCheck = Math.floor(random* 10) % 2;			
 				if(empCheck == 1)
 					System.out.println("Employee is Present\n");
 				else
