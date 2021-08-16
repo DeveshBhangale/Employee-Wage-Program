@@ -6,13 +6,27 @@ public class EmpWage {
 	public static int WagePerHour= 20;
 	public static int PartTime = 8;
 	public static int totalDays = 20;
-
+	private final int totalWorkingDays;
+	private final String companyName;
+	
 	public EmpWage() {
+		this.totalWorkingDays = 0;
+		this.companyName = "";
 	}
 	//	Use Case - 8
 	public EmpWage(int WagePerHour,int FullDay) {
 		this.WagePerHour = WagePerHour;	
 		this.FullDay = FullDay;
+		this.totalWorkingDays = 0;
+		this.companyName = "";
+	}
+
+	//	Use Case - 9
+	public EmpWage(String companyName,int WagePerHour,int FullDay,int totalWorkingDays) {
+		this.companyName = companyName;
+		this.WagePerHour = WagePerHour;	
+		this.FullDay = FullDay;
+		this.totalWorkingDays = totalWorkingDays;
 	}
 	
 	// Use Case - 7 
@@ -21,8 +35,8 @@ public class EmpWage {
 	}
 	
 	//	Use Case - 8
-	public void companyWage(String companyName,int totalDays){
-		int total = ((WagePerHour * FullDay) * totalDays);
+	public void companyWage(){
+		int total = ((WagePerHour * FullDay) * totalWorkingDays);
 		System.out.println("Company Wage of "+companyName +" is "+ total +"\n");
 	}
 	
@@ -68,17 +82,20 @@ public class EmpWage {
 					System.out.println("Wages for 100 hours or 20 Days of Employee is " + (WagePerHour * (FullDay-3)) * totalDays + "\n");
 					break;
 			
-			case 6: EmpWage Dmart = new EmpWage(10,10);
-					Dmart.companyWage("Dmart",25);
+			case 6: EmpWage Dmart = new EmpWage("Dmart",10,7,25);
+					Dmart.companyWage();
 					break;
 			
-			case 7: EmpWage Walmart = new EmpWage(15,7);
-					Walmart.companyWage("Walmart",25);
+			case 7: EmpWage Walmart = new EmpWage("Walmart",15,7,25);
+					Walmart.companyWage();
 					break;
-				
+			
+			default: System.out.println("Program Exited"); 
+					 return;
 			}
 			
 			}
 	}
+	
 }
 
