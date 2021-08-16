@@ -1,6 +1,7 @@
 import java.util.*;
 
 
+
 public class EmpWage {
 	public static int FullDay = 8;
 	public static int WagePerHour= 20;
@@ -49,7 +50,8 @@ public class EmpWage {
 					+ "4. To Calculate Wages for a Month\n"
 					+ "5. To Calculate Wages for 100 hours or 20 Days\n"
 					+ "6. To Calculate Wages for a Month of Dmart\n"
-					+ "7. To Calculate Wages for a Month of Walmart\n");
+					+ "7. To Calculate Wages for a Month of Walmart\n"
+					+ "8. To Calculate Wages for a Month of any other company");
 			// Use Case - 1
 			int a = sc.nextInt();
 			
@@ -89,6 +91,20 @@ public class EmpWage {
 			case 7: EmpWage Walmart = new EmpWage("Walmart",15,7,25);
 					Walmart.companyWage();
 					break;
+					
+			//Use Case - 10
+			case 8: System.out.println("Enter Company Name ");
+					String Name = sc.next();
+					System.out.println("Enter Wage Per hour");
+					int WagePerHour = sc.nextInt();
+					System.out.println("Enter total working hours");
+					int totalWorkingHours = sc.nextInt();
+					System.out.println("Enter Total Working Days in a Month");
+					int totalWorkingDays = sc.nextInt();
+					EmpWage company = new EmpWage(Name,WagePerHour,totalWorkingHours,totalWorkingDays);
+					company.companyWage();
+					break;
+					
 			
 			default: System.out.println("Program Exited"); 
 					 return;
