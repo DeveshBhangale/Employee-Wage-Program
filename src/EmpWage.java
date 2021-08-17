@@ -1,34 +1,46 @@
 import java.util.*;
 
 
+//Use Case - 10
+class CompanyEmpWage{
+	private final int WagePerHour;
+	private final int totalWorkingDays;
+	private final int totalWorkingHours;
+	private final String companyName;
+	
+	//	Use Case - 9
+	public CompanyEmpWage(String companyName,int WagePerHour,int totalWorkingHours,int totalWorkingDays) {
+		this.companyName = companyName;
+		this.WagePerHour = WagePerHour;	
+		this.totalWorkingHours = totalWorkingHours;
+		this.totalWorkingDays = totalWorkingDays;
+	}
+	
+	public void companyWage(){
+		int total = ((WagePerHour * totalWorkingHours) * totalWorkingDays);
+		System.out.println("Company Wage of "+companyName +" is "+ total +"\n");
+	}
+	
+}
+
 
 public class EmpWage {
 	public static int FullDay = 8;
 	public static int WagePerHour= 20;
 	public static int PartTime = 8;
 	public static int totalDays = 20;
-	private final int totalWorkingDays;
-	private final String companyName;
+	
 	
 	public EmpWage() {
-		this.totalWorkingDays = 0;
-		this.companyName = "";
 	}
 	//	Use Case - 8
-	public EmpWage(int WagePerHour,int FullDay) {
+	public EmpWage(int WagePerHour,int FullDay,int totalDays) {
 		this.WagePerHour = WagePerHour;	
 		this.FullDay = FullDay;
-		this.totalWorkingDays = 0;
-		this.companyName = "";
+		this.totalDays = totalDays;
 	}
 
-	//	Use Case - 9
-	public EmpWage(String companyName,int WagePerHour,int FullDay,int totalWorkingDays) {
-		this.companyName = companyName;
-		this.WagePerHour = WagePerHour;	
-		this.FullDay = FullDay;
-		this.totalWorkingDays = totalWorkingDays;
-	}
+	
 	
 	// Use Case - 7 
 	public static int monthlyWage(int WagePerHour,int FullDay,int totalDays){
@@ -36,8 +48,8 @@ public class EmpWage {
 	}
 	
 	//	Use Case - 8
-	public void companyWage(){
-		int total = ((WagePerHour * FullDay) * totalWorkingDays);
+	public void companyWage(String companyName){
+		int total = ((WagePerHour * FullDay) * totalDays);
 		System.out.println("Company Wage of "+companyName +" is "+ total +"\n");
 	}
 	
@@ -84,12 +96,12 @@ public class EmpWage {
 					System.out.println("Wages for 100 hours or 20 Days of Employee is " + (WagePerHour * (FullDay-3)) * totalDays + "\n");
 					break;
 			
-			case 6: EmpWage Dmart = new EmpWage("Dmart",10,7,25);
-					Dmart.companyWage();
+			case 6: EmpWage Dmart = new EmpWage(10,7,25);
+					Dmart.companyWage("Dmart");
 					break;
 			
-			case 7: EmpWage Walmart = new EmpWage("Walmart",15,7,25);
-					Walmart.companyWage();
+			case 7: EmpWage Walmart = new EmpWage(15,7,25);
+					Walmart.companyWage("Walmart");
 					break;
 					
 			//Use Case - 10
@@ -101,7 +113,7 @@ public class EmpWage {
 					int totalWorkingHours = sc.nextInt();
 					System.out.println("Enter Total Working Days in a Month");
 					int totalWorkingDays = sc.nextInt();
-					EmpWage company = new EmpWage(Name,WagePerHour,totalWorkingHours,totalWorkingDays);
+					CompanyEmpWage company = new CompanyEmpWage(Name,WagePerHour,totalWorkingHours,totalWorkingDays);
 					company.companyWage();
 					break;
 					
