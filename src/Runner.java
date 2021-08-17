@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Runner {
+public class Runner extends EmpWage {
 	public static int FullDay = 8;
 	public static int WagePerHour= 20;
 	public static int PartTime = 8;

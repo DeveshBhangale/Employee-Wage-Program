@@ -1,6 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class EmpWage {
+class EmpWage implements EmployeeWage{
 	public static int FullDay = 8;
 	public static int WagePerHour= 20;
 	public static int PartTime = 8;
@@ -19,7 +19,7 @@ public class EmpWage {
 	
 	
 	// Use Case - 7 
-	public static int monthlyWage(int WagePerHour,int FullDay,int totalDays){
+	public int monthlyWage(int WagePerHour,int FullDay,int totalDays){
 		return	((WagePerHour * FullDay) * totalDays);
 	}
 	
@@ -27,6 +27,11 @@ public class EmpWage {
 	public void companyWage(String companyName){
 		int total = ((WagePerHour * FullDay) * totalDays);
 		System.out.println("Company Wage of "+companyName +" is "+ total +"\n");
+	}
+	@Override
+	public void companyWage(String companyName, int WagePerHour, int totalWorkingHours, int totalWorkingDays) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 
